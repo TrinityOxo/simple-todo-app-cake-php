@@ -83,7 +83,7 @@ class UsersController extends AppController
                 $this->Flash->success(__('Đăng ký thành công'));
 
                 return $this->redirect([
-                    'controller' => 'users',
+                    'controller' => 'Users',
                     'action' => 'login',
                 ]);
             }
@@ -99,7 +99,7 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
         if ($result && $result->isValid()) {
             $redirect = $this->request->getQuery('redirect', [
-                'controller' => 'todos',
+                'controller' => 'Todos',
                 'action' => 'index',
             ]); 
             return $this->redirect($redirect);
